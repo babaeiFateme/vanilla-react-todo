@@ -20,7 +20,7 @@
 
     nav {
         .link-box {
-            border-left: 2px solid gray;
+            border-left: 2px solid var(--clr-link);
 
             .item {
                 list-style: none;
@@ -31,16 +31,22 @@
                 gap: 21px;
 
                 &::before {
-                    content: "__";
+                    content: "";
                     position: relative;
-                    top: -8px;
                     font-weight: 600;
-                    color: gray;
                     font-size: 24px;
+                    width: 20px;
+                    height: 3px;
+                    background-color: var(--clr-link);
                 }
 
                 .item-link {
                     padding: 10px 18px;
+
+                    a {
+                        color: var(--clr-link);
+
+                    }
                 }
 
                 &:last-child {

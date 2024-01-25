@@ -1,4 +1,19 @@
 .header {
-    min-height: 94px;
+    height: 94px;
     background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+
+    .header-box {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        &>div {
+            display: flex;
+            gap: 10px;
+        }
+    }
 }
