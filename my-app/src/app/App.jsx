@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import PanelLayout from "../components/Layouts/PanelLayout/PanelLayout";
 import { Active, All, Compeleted, Pending } from "../pages";
+import { PanelLayout } from "../components/Layouts";
 
 const App = () => {
     return (

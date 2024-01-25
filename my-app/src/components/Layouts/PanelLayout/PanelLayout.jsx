@@ -1,11 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { Header, Sidebar } from "../../Partials";
 
 const PanelLayout = ({ children }) => {
     return (
         <div>
-            sdfsdf
-            <Outlet />
+            <Header />
+            <div>
+                <Sidebar />
+                <Outlet />
+            </div>
         </div>
     );
 };
