@@ -1,11 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+    const [isShow, setIsShow] = useState(true);
+    const sidebarHandler = () => {
+        console.log(6756);
+        setIsShow(!isShow);
+    };
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${isShow ? "d-block" : "d-none"}`}>
             <div className="logo-box">
                 <h1>tasks</h1>
-                <span className="sidebar-btn-handler d-flex">+</span>
+                <button
+                    onClick={() => sidebarHandler()}
+                    className="sidebar-btn-handler d-flex"
+                >
+                    +
+                </button>
             </div>
             <nav>
                 <ul className="link-box">

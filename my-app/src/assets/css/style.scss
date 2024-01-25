@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+}
+
+.wrapper {
+    height: calc(100dvh - 96px);
+}
+
+@import "./base/variables";
+@import "./base/fonts";
+@import "./mixin/mixin";
+@import "./components/component";
+@import "./components/header";
+@import "./components/sidebar";
+@import "./components/index";

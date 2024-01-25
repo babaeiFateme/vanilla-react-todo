@@ -1,0 +1,35 @@
+:root {
+    --clr-green: #54C1AD;
+    --clr-orange: #FDBF46;
+    --clr-black: #1C1D22;
+    --clr-red: #F06A6D;
+    --clr-link: rgba(28, 29, 34, 0.5);
+    --clr-white: #fff;
+}
+
+$colors: (
+    "green" var(--clr-green) var(--clr-white),
+    "orange" var(--clr-orange) var(--clr-white),
+    "red" var(--clr-red) var(--clr-white),
+    "black" var(--clr-black) var(--clr-black),
+    "gray" var(--clr-link) var(--clr-black),
+);
+
+
+$fs: (
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    22,
+    24,
+    45
+);
+$fw: (
+    300,
+    400,
+    500
+);
