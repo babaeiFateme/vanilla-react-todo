@@ -4,13 +4,15 @@ import { Header, Sidebar } from "../../Partials";
 
 const PanelLayout = ({ children }) => {
     return (
-        <div>
-            <Header />
-            <div>
-                <Sidebar />
-                <Outlet />
+        <main>
+            <Sidebar />
+            <div className="content">
+                <Header />
+                <div className="wrapper">
+                    <Outlet />
+                </div>
             </div>
-        </div>
+        </main>
     );
 };
 
