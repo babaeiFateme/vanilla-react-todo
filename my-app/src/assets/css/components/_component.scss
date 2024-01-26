@@ -1,6 +1,6 @@
 @each $size in $fs {
     .fs-#{$size} {
-        font-size: #{size}px;
+        font-size: #{$size}px;
     }
 }
 
@@ -32,6 +32,12 @@
     .text-#{$name} {
         color: $color1 !important;
     }
+}
+
+.btn {
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
 }
 
 .cursor-pointer {

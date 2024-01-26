@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-  height: calc(100dvh - 176px);
+  height: calc(100dvh - 200px);
 }
 
 :root {
@@ -24,43 +24,43 @@ body {
 }
 
 .fs-13 {
-  font-size: sizepx;
+  font-size: 13px;
 }
 
 .fs-14 {
-  font-size: sizepx;
+  font-size: 14px;
 }
 
 .fs-15 {
-  font-size: sizepx;
+  font-size: 15px;
 }
 
 .fs-16 {
-  font-size: sizepx;
+  font-size: 16px;
 }
 
 .fs-17 {
-  font-size: sizepx;
+  font-size: 17px;
 }
 
 .fs-18 {
-  font-size: sizepx;
+  font-size: 18px;
 }
 
 .fs-20 {
-  font-size: sizepx;
+  font-size: 20px;
 }
 
 .fs-22 {
-  font-size: sizepx;
+  font-size: 22px;
 }
 
 .fs-24 {
-  font-size: sizepx;
+  font-size: 24px;
 }
 
 .fs-45 {
-  font-size: sizepx;
+  font-size: 45px;
 }
 
 .fw-300 {
@@ -168,6 +168,12 @@ body {
 
 .text-gray {
   color: var(--clr-link) !important;
+}
+
+.btn {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
 }
 
 .cursor-pointer {
@@ -333,6 +339,9 @@ a {
   color: unset;
 }
 
+.todos {
+  padding: 32px;
+}
 .todos .item {
   display: flex;
   width: 100%;
@@ -340,7 +349,7 @@ a {
   margin-bottom: 15px;
   padding: 12px 36px;
   border-radius: 20px;
-  border: 1px solid red;
+  border: 1px solid #A3A3B9;
 }
 
 .modal {

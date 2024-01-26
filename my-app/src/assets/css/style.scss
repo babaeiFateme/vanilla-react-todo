@@ -7,11 +7,10 @@
 body {
     height: 100dvh;
     font-family: sans-serif;
-
 }
 
 .wrapper {
-    height: calc(100dvh - 176px);
+    height: calc(100dvh - 200px);
 }
 
 @import "./base/variables";

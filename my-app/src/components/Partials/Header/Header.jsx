@@ -2,6 +2,8 @@ import { BiSearch } from "react-icons/bi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { MdOutlineDateRange } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
+import { BiAlignRight } from "react-icons/bi";
+
 import Modal from "../../Modal/Modal";
 import { useState } from "react";
 
@@ -18,14 +20,6 @@ const Header = ({ isShow, sidebarHandler }) => {
                 <div className="header">
                     <div>
                         <h2>Welcome back, Vincent 👋</h2>
-                        <button
-                            onClick={sidebarHandler}
-                            className={`${
-                                isShow ? "d-none" : "d-block"
-                            } sidebar-btn-handler d-flex`}
-                        >
-                            +
-                        </button>
                     </div>
                     <div className="header-box">
                         <button className="btn">
@@ -37,6 +31,14 @@ const Header = ({ isShow, sidebarHandler }) => {
                         </div>
                         <button className="btn">
                             <IoNotificationsOutline />
+                        </button>
+                        <button
+                            onClick={sidebarHandler}
+                            className={`${
+                                isShow ? "d-none" : "d-block"
+                            } sidebar-btn-handler d-flex btn cursor-pointer`}
+                        >
+                            <BiAlignRight />
                         </button>
                     </div>
                 </div>
