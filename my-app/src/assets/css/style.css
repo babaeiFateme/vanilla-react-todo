@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-  height: calc(100dvh - 96px);
+  height: calc(100dvh - 176px);
 }
 
 :root {
@@ -20,6 +20,7 @@ body {
   --clr-red: #F06A6D;
   --clr-link: rgba(28, 29, 34, 0.5);
   --clr-white: #fff;
+  --clr-mid-black: #1C1D22;
 }
 
 .fs-13 {
@@ -169,7 +170,7 @@ body {
   color: var(--clr-link) !important;
 }
 
-.header {
+header .header {
   height: 94px;
   background-color: #fff;
   display: flex;
@@ -177,14 +178,45 @@ body {
   align-items: center;
   padding: 28px 32px;
 }
-.header .header-box {
+header .header .header-box {
   display: flex;
   align-items: center;
   gap: 22px;
 }
-.header .header-box > div {
+header .header .header-box > div {
   display: flex;
   gap: 10px;
+}
+header .board-view {
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 32px;
+  background-color: #fdfdfe;
+  border-bottom: 2px solid rgba(28, 29, 34, 0.08);
+}
+header .board-view h3 {
+  font-weight: 400;
+  position: relative;
+}
+header .board-view h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 3px;
+  background-color: var(--clr-black);
+  bottom: -30px;
+}
+header .board-view .btn {
+  display: flex;
+  gap: 10px;
+  background-color: var(--clr-mid-black);
+  padding: 12px 24px;
+  color: var(--clr-white);
+  border-radius: 19px;
+  border: none;
+  cursor: pointer;
 }
 
 .sidebar {
@@ -240,6 +272,7 @@ body {
     position: absolute;
     background-color: white;
     height: 100%;
+    z-index: 300;
   }
 }
 main {
@@ -247,8 +280,7 @@ main {
 }
 main .content {
   flex-grow: 1;
-  border: 1px solid red;
-  background-color: red;
+  background-color: rgba(28, 29, 34, 0.06);
   height: 100dvh;
 }
 
