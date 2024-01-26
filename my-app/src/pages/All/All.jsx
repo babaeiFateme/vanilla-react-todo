@@ -1,7 +1,11 @@
-import React from "react";
+import TodoList from "../../components/TodoList/TodoList";
 
 const All = () => {
-    return <div>All</div>;
+    return (
+        <>
+            <TodoList />
+        </>
+    );
 };
 
 export default All;

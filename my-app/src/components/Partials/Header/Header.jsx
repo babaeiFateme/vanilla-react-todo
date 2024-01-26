@@ -2,44 +2,93 @@ import { BiSearch } from "react-icons/bi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { MdOutlineDateRange } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
+import Modal from "../../Modal/Modal";
+import { useState } from "react";
 
 const Header = ({ isShow, sidebarHandler }) => {
-    return (
-        <header>
-            <div className="header">
-                <div>
-                    <h2>Welcome back, Vincent 👋</h2>
-                    <button
-                        onClick={sidebarHandler}
-                        className={`${
-                            isShow ? "d-none" : "d-block"
-                        } sidebar-btn-handler d-flex`}
-                    >
-                        +
-                    </button>
-                </div>
-                <div className="header-box">
-                    <button className="btn">
-                        <BiSearch />
-                    </button>
-                    <div>
-                        <MdOutlineDateRange />
-                        <span className="text-gray">19 May 2022</span>
-                    </div>
-                    <button className="btn">
-                        <IoNotificationsOutline />
-                    </button>
-                </div>
-            </div>
-            <div className="board-view">
-                <h3>Board view</h3>
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const modalHandler = () => {
+        console.log(847965869);
+        setIsModalOpen(!isModalOpen);
+    };
 
-                <button className="btn fs-16 fw-600">
-                    <CiCirclePlus className="fs-16 fw-600" />
-                    <span>Add view</span>
-                </button>
-            </div>
-        </header>
+    return (
+        <>
+            <header>
+                <div className="header">
+                    <div>
+                        <h2>Welcome back, Vincent 👋</h2>
+                        <button
+                            onClick={sidebarHandler}
+                            className={`${
+                                isShow ? "d-none" : "d-block"
+                            } sidebar-btn-handler d-flex`}
+                        >
+                            +
+                        </button>
+                    </div>
+                    <div className="header-box">
+                        <button className="btn">
+                            <BiSearch />
+                        </button>
+                        <div>
+                            <MdOutlineDateRange />
+                            <span className="text-gray">19 May 2022</span>
+                        </div>
+                        <button className="btn">
+                            <IoNotificationsOutline />
+                        </button>
+                    </div>
+                </div>
+                <div className="board-view">
+                    <h3>Board view</h3>
+
+                    <button
+                        onClick={() => modalHandler()}
+                        className="btn fs-16 fw-600"
+                    >
+                        <CiCirclePlus className="fs-16 fw-600" />
+                        <span>Add view</span>
+                    </button>
+                </div>
+            </header>
+
+            <Modal
+                isOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                title="Add Task"
+            >
+                <form>
+                    <div>
+                        <div className="form-group">
+                            <label htmlFor="Taskname">task name</label>
+                            <input type="text" className="title" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="startTime">start time</label>
+                            <input type="text" className="stat-time" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="endTime">end time</label>
+                            <input type="text" className="end-time" />
+                        </div>
+                    </div>
+
+                    <div className="form-handler">
+                        <button
+                            className="btn"
+                            type="button"
+                            onClick={() => setIsModalOpen(false)}
+                        >
+                            discard
+                        </button>
+                        <button className="btn" type="submit">
+                            save
+                        </button>
+                    </div>
+                </form>
+            </Modal>
+        </>
     );
 };
 

@@ -1,5 +1,6 @@
 main {
     display: flex;
+    position: relative;
 
     .content {
         flex-grow: 1;
@@ -19,4 +20,16 @@ main {
 a {
     text-decoration: none;
     color: unset;
+}
+
+.todos {
+    .item {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        padding: 12px 36px;
+        border-radius: 20px;
+        border: 1px solid red;
+    }
 }

@@ -170,6 +170,41 @@ body {
   color: var(--clr-link) !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 44px;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+form {
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+form .form-group {
+  margin-bottom: 20px;
+}
+form .form-handler {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+  align-items: center;
+  margin-top: 40px;
+}
+form .form-handler button {
+  padding: 6px 20px;
+}
+
 header .header {
   height: 94px;
   background-color: #fff;
@@ -277,6 +312,7 @@ header .board-view .btn {
 }
 main {
   display: flex;
+  position: relative;
 }
 main .content {
   flex-grow: 1;
@@ -295,4 +331,42 @@ main .content {
 a {
   text-decoration: none;
   color: unset;
+}
+
+.todos .item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 12px 36px;
+  border-radius: 20px;
+  border: 1px solid red;
+}
+
+.modal {
+  position: absolute;
+  background-color: white;
+  z-index: 310;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  max-width: 700px;
+  padding: 32px;
+  border-radius: 20px;
+}
+.modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--clr-black);
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 309;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */

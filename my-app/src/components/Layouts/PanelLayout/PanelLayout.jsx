@@ -5,7 +5,6 @@ import { Header, Sidebar } from "../../Partials";
 const PanelLayout = ({ children }) => {
     const [isShow, setIsShow] = useState(true);
     const sidebarHandler = () => {
-        console.log(6756);
         setIsShow(!isShow);
     };
     return (
