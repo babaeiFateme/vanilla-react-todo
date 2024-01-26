@@ -4,6 +4,7 @@
     --clr-black: #1C1D22;
     --clr-red: #F06A6D;
     --clr-link: rgba(28, 29, 34, 0.5);
+    --clr-blue: #669ce3;
     --clr-white: #fff;
     --clr-mid-black: #1C1D22;
 
@@ -14,7 +15,8 @@ $colors: (
     "orange" var(--clr-orange) var(--clr-white),
     "red" var(--clr-red) var(--clr-white),
     "black" var(--clr-black) var(--clr-black),
-    "gray" var(--clr-link) var(--clr-black),
+    "gray" var(--clr-link) var(--clr-white),
+    "blue" var(--clr-blue) var(--clr-white),
 );
 
 

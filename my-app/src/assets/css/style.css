@@ -19,6 +19,7 @@ body {
   --clr-black: #1C1D22;
   --clr-red: #F06A6D;
   --clr-link: rgba(28, 29, 34, 0.5);
+  --clr-blue: #669ce3;
   --clr-white: #fff;
   --clr-mid-black: #1C1D22;
 }
@@ -153,21 +154,40 @@ body {
 
 .btn-gray {
   background-color: var(--clr-link) !important;
-  color: var(--clr-black) !important;
+  color: var(--clr-white) !important;
   padding: 0.75rem 1.5rem;
 }
 .btn-gray:hover, .btn-gray:active, .btn-gray:focus {
   background-color: var(--clr-link) !important;
-  color: var(--clr-black) !important;
+  color: var(--clr-white) !important;
 }
 
 .bg-gray {
   background-color: var(--clr-link) !important;
-  color: var(--clr-black) !important;
+  color: var(--clr-white) !important;
 }
 
 .text-gray {
   color: var(--clr-link) !important;
+}
+
+.btn-blue {
+  background-color: var(--clr-blue) !important;
+  color: var(--clr-white) !important;
+  padding: 0.75rem 1.5rem;
+}
+.btn-blue:hover, .btn-blue:active, .btn-blue:focus {
+  background-color: var(--clr-blue) !important;
+  color: var(--clr-white) !important;
+}
+
+.bg-blue {
+  background-color: var(--clr-blue) !important;
+  color: var(--clr-white) !important;
+}
+
+.text-blue {
+  color: var(--clr-blue) !important;
 }
 
 .btn {
@@ -324,6 +344,7 @@ main .content {
   flex-grow: 1;
   background-color: rgba(28, 29, 34, 0.06);
   height: 100dvh;
+  position: relative;
 }
 
 .d-none {

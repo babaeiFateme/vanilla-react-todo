@@ -4,7 +4,6 @@ import { BiSolidEdit } from "react-icons/bi";
 const TodoList = () => {
     return (
         <div>
-            {" "}
             <ul className="todos">
               
                 <li className="item">

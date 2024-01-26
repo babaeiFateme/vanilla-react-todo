@@ -5,13 +5,53 @@ import { CiCirclePlus } from "react-icons/ci";
 import { BiAlignRight } from "react-icons/bi";
 
 import Modal from "../../Modal/Modal";
-import { useState } from "react";
+import {  useRef, useState } from "react";
 
 const Header = ({ isShow, sidebarHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [formData, setFormData] = useState({
+        title: "",
+        startTime: "",
+        endTime: "",
+    });
+    const todosRef = useRef([]);
+
+    const [todos, setTodos] = useState([]);
+
     const modalHandler = () => {
-        console.log(847965869);
         setIsModalOpen(!isModalOpen);
+    };
+
+    const generateTodoHandler = (e) => {
+        e.preventDefault();
+        const newTodo = {
+            id: Math.floor(Math.random() * 1000),
+            title: formData.title,
+            startTime: formData.startTime,
+            endTime: formData.endTime,
+        };
+
+        // Update todosRef with the new task
+        todosRef.current = [...todosRef.current, newTodo];
+        setTodos(todosRef.current);
+
+        // Clear form fields
+        setFormData({
+            title: "",
+            startTime: "",
+            endTime: "",
+        });
+
+        // Close the modal
+        setIsModalOpen(false);
+    };
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
     };
 
     return (
@@ -60,31 +100,49 @@ const Header = ({ isShow, sidebarHandler }) => {
                 setIsModalOpen={setIsModalOpen}
                 title="Add Task"
             >
-                <form>
+                <form onSubmit={generateTodoHandler}>
                     <div>
                         <div className="form-group">
                             <label htmlFor="Taskname">task name</label>
-                            <input type="text" className="title" />
+                            <input
+                                type="text"
+                                className="title"
+                                name="title"
+                                value={formData.title}
+                                onChange={handleInputChange}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="startTime">start time</label>
-                            <input type="text" className="stat-time" />
+                            <input
+                                type="text"
+                                name="startTime"
+                                className="stat-time"
+                                value={formData.startTime}
+                                onChange={handleInputChange}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="endTime">end time</label>
-                            <input type="text" className="end-time" />
+                            <input
+                                type="text"
+                                name="endTime"
+                                className="end-time"
+                                value={formData.endTime}
+                                onChange={handleInputChange}
+                            />
                         </div>
                     </div>
 
                     <div className="form-handler">
                         <button
-                            className="btn"
+                            className="btn btn-blue"
                             type="button"
                             onClick={() => setIsModalOpen(false)}
                         >
                             discard
                         </button>
-                        <button className="btn" type="submit">
+                        <button className="btn btn-gray" type="submit">
                             save
                         </button>
                     </div>
