@@ -5,19 +5,20 @@ import { CiCirclePlus } from "react-icons/ci";
 import { BiAlignRight } from "react-icons/bi";
 
 import Modal from "../../Modal/Modal";
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
+import useTodosStore from "../../../core/storage/useTodosStore";
 
 const Header = ({ isShow, sidebarHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const { todos, addTodo } = useTodosStore();
     const [formData, setFormData] = useState({
         title: "",
         startTime: "",
         endTime: "",
     });
-    const todosRef = useRef([]);
+    // const todosRef = useRef([]);
 
-    const [todos, setTodos] = useState([]);
+    // const [todos, setTodos] = useState([]);
 
     const modalHandler = () => {
         setIsModalOpen(!isModalOpen);
@@ -33,8 +34,7 @@ const Header = ({ isShow, sidebarHandler }) => {
         };
 
         // Update todosRef with the new task
-        todosRef.current = [...todosRef.current, newTodo];
-        setTodos(todosRef.current);
+        addTodo(newTodo);
 
         // Clear form fields
         setFormData({
