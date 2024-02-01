@@ -5,20 +5,20 @@ import { CiCirclePlus } from "react-icons/ci";
 import { BiAlignRight } from "react-icons/bi";
 
 import Modal from "../../Modal/Modal";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import useTodosStore from "../../../core/storage/useTodosStore";
 
 const Header = ({ isShow, sidebarHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     const { todos, addTodo } = useTodosStore();
+
     const [formData, setFormData] = useState({
         title: "",
         startTime: "",
         endTime: "",
+        status: "",
     });
-    // const todosRef = useRef([]);
-
-    // const [todos, setTodos] = useState([]);
 
     const modalHandler = () => {
         setIsModalOpen(!isModalOpen);
@@ -31,6 +31,7 @@ const Header = ({ isShow, sidebarHandler }) => {
             title: formData.title,
             startTime: formData.startTime,
             endTime: formData.endTime,
+            status: "active",
         };
 
         // Update todosRef with the new task
@@ -115,7 +116,7 @@ const Header = ({ isShow, sidebarHandler }) => {
                         <div className="form-group">
                             <label htmlFor="startTime">start time</label>
                             <input
-                                type="text"
+                                type="date"
                                 name="startTime"
                                 className="stat-time"
                                 value={formData.startTime}
@@ -125,7 +126,7 @@ const Header = ({ isShow, sidebarHandler }) => {
                         <div className="form-group">
                             <label htmlFor="endTime">end time</label>
                             <input
-                                type="text"
+                                type="date"
                                 name="endTime"
                                 className="end-time"
                                 value={formData.endTime}

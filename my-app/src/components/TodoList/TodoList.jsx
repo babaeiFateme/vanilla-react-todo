@@ -17,9 +17,9 @@ const TodoList = () => {
                 {todos.map((item) => (
                     <li className="item" key={item.id}>
                         <div className="title">{item.title}</div>
-                        <div className="title">{item.endTime}</div>
-                        <div className="title">{item.endTime}</div>
-                        <div>active</div>
+                        <div className="time">{item.endTime}</div>
+                        <div className="time">{item.endTime}</div>
+                        <div>{item.status}</div>
                         <div>
                             <button
                                 className="btn"
