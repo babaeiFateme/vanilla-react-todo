@@ -1,20 +1,29 @@
 import { BiTrash } from "react-icons/bi";
 import { BiSolidEdit } from "react-icons/bi";
-import useTodosStore from "../../core/storage/useTodosStore";
 import Badge from "../common/Badge/Badge";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const TodoList = () => {
-    const { todos, deleteTodo } = useTodosStore();
+    const [todos, setTodos] = useState([]);
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem("todos"));
+        setTodos(data);
+    }, [todos]);
     const deleteTodoHandler = (id) => {
-        // Call the deleteTodo function from the store
-        deleteTodo(id);
+        const filteredTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(filteredTodos);
+
+        // Update local storage with the new todos array
+        localStorage.setItem("todos", JSON.stringify(filteredTodos));
     };
-    if (todos.length < 1) {
+    if (!todos) {
         return <>empty list</>;
     }
     return (
         <div>
             <ul className="todos">
+                dfdsf
                 {todos.map((item) => (
                     <li className="item" key={item.id}>
                         <div className="title">{item.title}</div>

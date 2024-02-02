@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../../common/Sidebar/Sidebar";
-import Header from "../../common/Header/Header";
+import Sidebar from "../../Sidebar/Sidebar";
+import Header from "../../Header/Header";
 
 const PanelLayout = ({ children }) => {
     const [isShow, setIsShow] = useState(true);

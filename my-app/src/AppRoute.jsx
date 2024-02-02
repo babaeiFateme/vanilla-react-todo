@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { PanelLayout } from "./components/Layouts";
+import  PanelLayout  from "./components/common/Layouts/PanelLayout/PanelLayout";
 import Compeleted from "./pages/Compeleted/Compeleted.jsx";
 import Pending from "./pages/Pending/Pending.jsx";
 import Active from "./pages/Active/Active.jsx";

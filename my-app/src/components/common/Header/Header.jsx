@@ -5,14 +5,14 @@ import { CiCirclePlus } from "react-icons/ci";
 import { BiAlignRight } from "react-icons/bi";
 
 import Modal from "../Modal/Modal";
-import { useState } from "react";
-import useTodosStore from "../../../core/storage/useTodosStore";
-import Badge from "../Badge/Badge";
+import { useEffect, useState } from "react";
+
+import useLocalStorage from "../../../hooks/useLocalStorage";
 
 const Header = ({ isShow, sidebarHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { todos, addTodo } = useTodosStore();
+    const [todos, setTodos] = useLocalStorage("todos", []);
 
     const [formData, setFormData] = useState({
         title: "",
@@ -34,9 +34,7 @@ const Header = ({ isShow, sidebarHandler }) => {
             endTime: formData.endTime,
             status: 0,
         };
-
-        // Update todosRef with the new task
-        addTodo(newTodo);
+        setTodos([...todos, newTodo]);
 
         // Clear form fields
         setFormData({
@@ -55,7 +53,7 @@ const Header = ({ isShow, sidebarHandler }) => {
             [name]: value,
         });
     };
-
+    useEffect(() => {}, [todos]);
     return (
         <>
             <header>
