@@ -4,7 +4,7 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
 import { BiAlignRight } from "react-icons/bi";
 
-import Modal from "../../Modal/Modal";
+import Modal from "../Modal/Modal";
 import { useState } from "react";
 import useTodosStore from "../../../core/storage/useTodosStore";
 

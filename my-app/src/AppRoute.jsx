@@ -1,13 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Active, All, Compeleted, Pending } from "./pages";
 import { PanelLayout } from "./components/Layouts";
-
-const App = () => {
+// import All from "./pages/All/All.jsx";
+import Compeleted from "./pages/Compeleted/Compeleted.jsx";
+import Pending from "./pages/Pending/Pending.jsx";
+import Active from "./pages/Active/Active.jsx";
+const AppRoute = () => {
     return (
         <Routes>
             <Route path="/" element={<PanelLayout />}>
-                <Route index element={<All />} />
+                <Route index />
                 <Route path="compelete" element={<Compeleted />} />
                 <Route path="pending" element={<Pending />} />
                 <Route path="active" element={<Active />} />
@@ -16,4 +18,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default AppRoute;

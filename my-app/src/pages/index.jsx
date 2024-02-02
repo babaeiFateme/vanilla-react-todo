@@ -1,6 +1,6 @@
 import TodoList from "../../components/TodoList/TodoList";
 
-const All = () => {
+const Landing = () => {
     return (
         <>
             <TodoList />
@@ -8,4 +8,4 @@ const All = () => {
     );
 };
 
-export default All;
+export default Landing;

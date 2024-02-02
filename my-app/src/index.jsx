@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./assets/css/style.css";
 import { BrowserRouter } from "react-router-dom";
 
-import App from "./App";
+
+import AppRoute from "./AppRoute";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
-        <App />
+        <AppRoute />
     </BrowserRouter>
 );
