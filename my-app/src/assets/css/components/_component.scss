@@ -32,6 +32,13 @@
     .text-#{$name} {
         color: $color1 !important;
     }
+
+    .badge-#{$name} {
+        background-color: $color1;
+        color: $color2;
+        padding: 8px 16px;
+        border-radius: 16px;
+    }
 }
 
 .btn {

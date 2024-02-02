@@ -1,6 +1,7 @@
 import { BiTrash } from "react-icons/bi";
 import { BiSolidEdit } from "react-icons/bi";
 import useTodosStore from "../../core/storage/useTodosStore";
+import Badge from "../common/Badge/Badge";
 
 const TodoList = () => {
     const { todos, deleteTodo } = useTodosStore();
@@ -19,7 +20,9 @@ const TodoList = () => {
                         <div className="title">{item.title}</div>
                         <div className="time">{item.endTime}</div>
                         <div className="time">{item.endTime}</div>
-                        <div>{item.status}</div>
+                        <div>
+                            <Badge status={item.status} />
+                        </div>
                         <div>
                             <button
                                 className="btn"

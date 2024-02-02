@@ -7,6 +7,7 @@ import { BiAlignRight } from "react-icons/bi";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
 import useTodosStore from "../../../core/storage/useTodosStore";
+import Badge from "../Badge/Badge";
 
 const Header = ({ isShow, sidebarHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,7 +32,7 @@ const Header = ({ isShow, sidebarHandler }) => {
             title: formData.title,
             startTime: formData.startTime,
             endTime: formData.endTime,
-            status: "active",
+            status: 0,
         };
 
         // Update todosRef with the new task

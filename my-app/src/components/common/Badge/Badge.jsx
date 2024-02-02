@@ -9,11 +9,11 @@ const Badge = ({ status }) => {
     const statusGenerate = () => {
         switch (status) {
             case 0:
-                return <span className="badge badge-success">active</span>;
+                return <span className="badge badge-green fw-700">active</span>;
             case 1:
-                return <span className="badge badge-warning">pending</span>;
+                return <span className="badge badge-orange fw-700">pending</span>;
             case 2:
-                return <span className="badge badge-danger">complete</span>;
+                return <span className="badge badge-red fw-700">complete</span>;
             default:
                 return null;
         }

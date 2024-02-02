@@ -95,6 +95,13 @@ body {
   color: var(--clr-green) !important;
 }
 
+.badge-green {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
 .btn-orange {
   background-color: var(--clr-orange) !important;
   color: var(--clr-white) !important;
@@ -112,6 +119,13 @@ body {
 
 .text-orange {
   color: var(--clr-orange) !important;
+}
+
+.badge-orange {
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  padding: 8px 16px;
+  border-radius: 16px;
 }
 
 .btn-red {
@@ -133,6 +147,13 @@ body {
   color: var(--clr-red) !important;
 }
 
+.badge-red {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
 .btn-black {
   background-color: var(--clr-black) !important;
   color: var(--clr-black) !important;
@@ -150,6 +171,13 @@ body {
 
 .text-black {
   color: var(--clr-black) !important;
+}
+
+.badge-black {
+  background-color: var(--clr-black);
+  color: var(--clr-black);
+  padding: 8px 16px;
+  border-radius: 16px;
 }
 
 .btn-gray {
@@ -171,6 +199,13 @@ body {
   color: var(--clr-link) !important;
 }
 
+.badge-gray {
+  background-color: var(--clr-link);
+  color: var(--clr-white);
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
 .btn-blue {
   background-color: var(--clr-blue) !important;
   color: var(--clr-white) !important;
@@ -188,6 +223,13 @@ body {
 
 .text-blue {
   color: var(--clr-blue) !important;
+}
+
+.badge-blue {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+  padding: 8px 16px;
+  border-radius: 16px;
 }
 
 .btn {
