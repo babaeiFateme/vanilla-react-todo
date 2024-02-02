@@ -19,39 +19,39 @@ header {
         }
     }
 
-    .board-view {
-        min-height: 50px;
+}
+.board-view {
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 32px;
+    background-color: #fdfdfe;
+    border-bottom: 2px solid rgba(28, 29, 34, 0.08);
+
+    h3 {
+        font-weight: 400;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 3px;
+            background-color: var(--clr-black);
+            bottom: -30px;
+        }
+    }
+
+    .btn {
         display: flex;
-        justify-content: space-between;
-        padding: 28px 32px;
-        background-color: #fdfdfe;
-        border-bottom: 2px solid rgba(28, 29, 34, 0.08);
+        gap: 10px;
+        background-color: var(--clr-mid-black);
+        padding: 12px 24px;
+        color: var(--clr-white);
+        border-radius: 19px;
+        border: none;
+        cursor: pointer;
 
-        h3 {
-            font-weight: 400;
-            position: relative;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                position: absolute;
-                height: 3px;
-                background-color: var(--clr-black);
-                bottom: -30px;
-            }
-        }
-
-        .btn {
-            display: flex;
-            gap: 10px;
-            background-color: var(--clr-mid-black);
-            padding: 12px 24px;
-            color: var(--clr-white);
-            border-radius: 19px;
-            border: none;
-            cursor: pointer;
-
-        }
     }
 }

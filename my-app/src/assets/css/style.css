@@ -291,7 +291,8 @@ header .header .header-box > div {
   display: flex;
   gap: 10px;
 }
-header .board-view {
+
+.board-view {
   min-height: 50px;
   display: flex;
   justify-content: space-between;
@@ -299,11 +300,11 @@ header .board-view {
   background-color: #fdfdfe;
   border-bottom: 2px solid rgba(28, 29, 34, 0.08);
 }
-header .board-view h3 {
+.board-view h3 {
   font-weight: 400;
   position: relative;
 }
-header .board-view h3::after {
+.board-view h3::after {
   content: "";
   display: block;
   width: 100%;
@@ -312,7 +313,7 @@ header .board-view h3::after {
   background-color: var(--clr-black);
   bottom: -30px;
 }
-header .board-view .btn {
+.board-view .btn {
   display: flex;
   gap: 10px;
   background-color: var(--clr-mid-black);

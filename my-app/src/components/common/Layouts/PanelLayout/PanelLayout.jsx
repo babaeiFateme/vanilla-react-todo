@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 import Header from "../../Header/Header";
+import InnerLayout from "../InnerLayout/InnerLayout";
 
 const PanelLayout = ({ children }) => {
     const [isShow, setIsShow] = useState(true);
@@ -14,7 +15,9 @@ const PanelLayout = ({ children }) => {
             <div className="content">
                 <Header isShow={isShow} sidebarHandler={sidebarHandler} />
                 <div className="wrapper">
-                    <Outlet />
+                    <InnerLayout>
+                        <Outlet />
+                    </InnerLayout>
                 </div>
             </div>
         </main>
