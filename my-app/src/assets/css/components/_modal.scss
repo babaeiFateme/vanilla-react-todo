@@ -1,13 +1,15 @@
 .modal {
     position: absolute;
     background-color: white;
-    z-index: 310;
+    z-index: 410;
     left: 50%;
-    transform: translate(-50%, 0);
+    top: 0;
+    transform: translate(-50%, 50%);
     width: 100%;
     max-width: 700px;
     padding: 32px;
     border-radius: 20px;
+
 
     .modal-header {
         display: flex;
@@ -22,7 +24,7 @@
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 309;
+    z-index: 400;
     width: 100%;
     height: 100%;
 }
