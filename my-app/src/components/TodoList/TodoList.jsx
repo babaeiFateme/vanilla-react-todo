@@ -5,19 +5,11 @@ import { useEffect, useState } from "react";
 import { useTodoContext } from "../../hooks/TodoContext";
 
 const TodoList = () => {
-    const { todos, addTodo } = useTodoContext();
-    console.log(todos, "todos");
+    const { todos, addTodo, deleteTodo } = useTodoContext();
+    // console.log(addTodo,"add");
 
-    // localStorage.setItem("todos", JSON.stringify(todos));
-    useEffect(() => {
-        // setTodos(data);
-    }, [todos]);
     const deleteTodoHandler = (id) => {
-        const filteredTodos = todos.filter((todo) => todo.id !== id);
-        addTodo(filteredTodos);
-
-        // Update local storage with the new todos array
-        localStorage.setItem("todos", JSON.stringify(filteredTodos));
+        deleteTodo(id);
     };
     if (!todos) {
         return <>empty list</>;
@@ -25,9 +17,8 @@ const TodoList = () => {
     return (
         <div>
             <ul className="todos">
-                dfdsf
-                {todos.map((item) => (
-                    <li className="item" key={item.id}>
+                {todos.map((item, index) => (
+                    <li className="item" key={index}>
                         <div className="title">{item.title}</div>
                         <div className="time">{item.endTime}</div>
                         <div className="time">{item.endTime}</div>

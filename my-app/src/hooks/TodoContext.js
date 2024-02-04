@@ -9,9 +9,15 @@ export const TodoProvider = ({ children }) => {
         setTodos([...todos, newTodo]);
     };
 
+    const deleteTodo = (id) => {
+        const filteredTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(filteredTodos);
+    };
+
     const value = {
         todos,
         addTodo,
+        deleteTodo,
     };
 
     return (
