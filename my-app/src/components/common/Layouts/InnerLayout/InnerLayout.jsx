@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import useLocalStorage from "../../../../hooks/useLocalStorage";
 import Modal from "../../Modal/Modal";
+import { useTodoContext } from "../../../../hooks/TodoContext";
 
 const InnerLayout = ({ children }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const [todos, setTodos] = useLocalStorage("todos", []);
+    const { todos, addTodo } = useTodoContext();
 
     const [formData, setFormData] = useState({
         title: "",
@@ -28,7 +29,7 @@ const InnerLayout = ({ children }) => {
             endTime: formData.endTime,
             status: 0,
         };
-        setTodos([...todos, newTodo]);
+        addTodo(newTodo);
 
         // Clear form fields
         setFormData({

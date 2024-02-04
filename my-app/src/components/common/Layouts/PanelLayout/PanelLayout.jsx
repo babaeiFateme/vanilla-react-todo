@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../../Sidebar/Sidebar";
 import Header from "../../Header/Header";
 import InnerLayout from "../InnerLayout/InnerLayout";
+import { TodoProvider } from "../../../../hooks/TodoContext";
 
 const PanelLayout = ({ children }) => {
     const [isShow, setIsShow] = useState(true);
@@ -15,9 +16,11 @@ const PanelLayout = ({ children }) => {
             <div className="content">
                 <Header isShow={isShow} sidebarHandler={sidebarHandler} />
                 <div className="wrapper">
-                    <InnerLayout>
-                        <Outlet />
-                    </InnerLayout>
+                    <TodoProvider>
+                        <InnerLayout>
+                            <Outlet />
+                        </InnerLayout>
+                    </TodoProvider>
                 </div>
             </div>
         </main>

@@ -2,29 +2,31 @@ import { BiTrash } from "react-icons/bi";
 import { BiSolidEdit } from "react-icons/bi";
 import Badge from "../common/Badge/Badge";
 import { useEffect, useState } from "react";
+import { useTodoContext } from "../../hooks/TodoContext";
 
 const TodoList = () => {
-    // const [todos, setTodos] = useState([]);
-    var data = JSON.parse(localStorage.getItem("todos"));
+    const { todos, addTodo } = useTodoContext();
+    console.log(todos, "todos");
 
+    // localStorage.setItem("todos", JSON.stringify(todos));
     useEffect(() => {
         // setTodos(data);
-    }, [data]);
+    }, [todos]);
     const deleteTodoHandler = (id) => {
-        const filteredTodos = data.filter((todo) => todo.id !== id);
-        // setTodos(filteredTodos);
+        const filteredTodos = todos.filter((todo) => todo.id !== id);
+        addTodo(filteredTodos);
 
         // Update local storage with the new todos array
         localStorage.setItem("todos", JSON.stringify(filteredTodos));
     };
-    if (!data) {
+    if (!todos) {
         return <>empty list</>;
     }
     return (
         <div>
             <ul className="todos">
                 dfdsf
-                {data.map((item) => (
+                {todos.map((item) => (
                     <li className="item" key={item.id}>
                         <div className="title">{item.title}</div>
                         <div className="time">{item.endTime}</div>
