@@ -7,7 +7,7 @@ import { useTodoContext } from "../../../../hooks/TodoContext";
 const InnerLayout = ({ children }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { todos, addTodo ,deleteTodo} = useTodoContext();
+    const { todos, addTodo} = useTodoContext();
 
     const [formData, setFormData] = useState({
         title: "",

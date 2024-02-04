@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import { useTodoContext } from "../../hooks/TodoContext";
 
 const TodoList = () => {
-    const { todos, addTodo, deleteTodo } = useTodoContext();
-    // console.log(addTodo,"add");
+    const { todos, deleteTodo } = useTodoContext();
 
     const deleteTodoHandler = (id) => {
         deleteTodo(id);

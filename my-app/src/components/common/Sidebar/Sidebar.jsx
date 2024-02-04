@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = ({ isShow, sidebarHandler }) => {
     return (
-        <div className={`sidebar ${isShow ? "d-block" : "d-none"}`}>
+        <div className={`sidebar ${isShow ? "" : "closeSide"}`}>
             <div className="logo-box">
                 <h1>tasks</h1>
                 <button
