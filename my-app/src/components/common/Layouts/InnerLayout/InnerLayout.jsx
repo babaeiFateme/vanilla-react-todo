@@ -7,8 +7,7 @@ import { useTodoContext } from "../../../../hooks/TodoContext";
 const InnerLayout = ({ children }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { todos, addTodo} = useTodoContext();
-
+    const { handleAdd } = useTodoContext();
     const [formData, setFormData] = useState({
         title: "",
         startTime: "",
@@ -29,7 +28,7 @@ const InnerLayout = ({ children }) => {
             endTime: formData.endTime,
             status: 0,
         };
-        addTodo(newTodo);
+        handleAdd(newTodo);
 
         // Clear form fields
         setFormData({
@@ -48,7 +47,7 @@ const InnerLayout = ({ children }) => {
             [name]: value,
         });
     };
-    useEffect(() => {}, [todos]);
+    // useEffect(() => {}, [todos, todosList]);
     return (
         <div>
             <div className="board-view">

@@ -1,11 +1,7 @@
 import TodoList from "../components/TodoList/TodoList";
 
 const Landing = () => {
-    return (
-        <>
-            <TodoList />
-        </>
-    );
+    return <TodoList />;
 };
 
 export default Landing;

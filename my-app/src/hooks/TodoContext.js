@@ -1,23 +1,34 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import {
+    getLocalStorageItem,
+    setLocalStorageItem,
+} from "../core/services/storage/local-storage";
 
 const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
-    const [todos, setTodos] = useState([]);
+    const storageKey = "todos";
+    const initialValue = getLocalStorageItem(storageKey);
+    const [todos, setTodos] = useState(initialValue || []);
 
-    const addTodo = (newTodo) => {
-        setTodos([...todos, newTodo]);
+    const handleAdd = (todoRecord) => {
+        // setLocalStorageItem(storageKey, todoRecord)
+        setTodos((current) => [...current, todoRecord]);
     };
 
-    const deleteTodo = (id) => {
-        const filteredTodos = todos.filter((todo) => todo.id !== id);
-        setTodos(filteredTodos);
+    const handleDelete = (todoId) => {
+        const filteredData = todos.filter((item) => item.id !== todoId);
+        setTodos(filteredData);
     };
+
+    useEffect(() => {
+        setLocalStorageItem(storageKey, todos);
+    }, [todos]);
 
     const value = {
         todos,
-        addTodo,
-        deleteTodo,
+        handleAdd,
+        handleDelete,
     };
 
     return (

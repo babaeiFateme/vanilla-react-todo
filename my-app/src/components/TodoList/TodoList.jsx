@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import { useTodoContext } from "../../hooks/TodoContext";
 
 const TodoList = () => {
-    const { todos, deleteTodo } = useTodoContext();
+    const { todos, handleDelete } = useTodoContext();
 
     const deleteTodoHandler = (id) => {
-        deleteTodo(id);
+        handleDelete(id);
     };
+
     if (!todos) {
         return <>empty list</>;
     }
