@@ -1,12 +1,13 @@
 main {
     display: flex;
     position: relative;
+    height: 100vh;
 
     .content {
         flex-grow: 1;
         background-color: rgba(28, 29, 34, 0.06);
-        height: 100dvh;
         position: relative;
+
     }
 }
 
@@ -38,12 +39,13 @@ a {
 }
 
 .todos {
-    max-height: calc(100vh - 225px);
+    max-height: calc(100vh - 290px);
     overflow-y: auto;
 }
 
 .page-title {
-    position: relative;
+    display: flex;
+    align-items: center;
 
     .page-content {
         border-radius: 18px;
@@ -53,21 +55,14 @@ a {
         background-color: red;
         color: white;
         width: fit-content;
-
+        position: relative;
     }
 
-    &:after {
-        content: "";
-        display: block;
-        height: 2px;
-        background-color: #2d2dcf;
+    hr {
+        background-color: red;
         width: 100%;
-        position: absolute;
-        z-index: 10;
-        left: 134px;
-        top: 20px;
-
     }
+
 }
 
 .inner-content {

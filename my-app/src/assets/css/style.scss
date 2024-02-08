@@ -5,12 +5,12 @@
 }
 
 body {
-    height: 100dvh;
     font-family: sans-serif;
 }
 
 .wrapper {
-    height: calc(100dvh - 200px);
+    height: calc(100vh - 100px);
+    background-image: linear-gradient(to left, #fff 95%, #f1f0f0)
 }
 
 @import "./base/variables";

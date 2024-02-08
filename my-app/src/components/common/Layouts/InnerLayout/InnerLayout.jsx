@@ -64,7 +64,10 @@ const InnerLayout = ({ children }) => {
             </div>
             <div>
                 <h1 className="page-title">
-                    <span className="page-content">{pageTitle}</span>
+                    <span className="page-content">
+                        {pageTitle === "" ? "Tasks" : pageTitle}
+                    </span>
+                    <hr />
                 </h1>
                 {children}
             </div>
