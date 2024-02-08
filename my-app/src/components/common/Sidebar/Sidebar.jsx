@@ -1,8 +1,7 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ isShow, sidebarHandler }) => {
     const location = useLocation();
-    console.log(location.pathname);
     return (
         <div className={`sidebar ${isShow ? "" : "closeSide"}`}>
             <div className="logo-box">

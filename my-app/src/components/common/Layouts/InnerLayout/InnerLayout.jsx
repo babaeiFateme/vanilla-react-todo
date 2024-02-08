@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import Modal from "../../Modal/Modal";
 import { useTodoContext } from "../../../../hooks/TodoContext";
+import { useLocation } from "react-router-dom";
 
 const InnerLayout = ({ children }) => {
+    const location = useLocation();
+    const pageTitle = location.pathname.replace("/", "");
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { handleAdd } = useTodoContext();
@@ -46,9 +49,8 @@ const InnerLayout = ({ children }) => {
             [name]: value,
         });
     };
-    // useEffect(() => {}, [todos, todosList]);
     return (
-        <div>
+        <div className="inner-content">
             <div className="board-view">
                 <h3>Board view</h3>
 
@@ -60,7 +62,12 @@ const InnerLayout = ({ children }) => {
                     <span>Add view</span>
                 </button>
             </div>
-            {children}
+            <div>
+                <h1 className="page-title">
+                    <span className="page-content">{pageTitle}</span>
+                </h1>
+                {children}
+            </div>
 
             <Modal
                 isOpen={isModalOpen}

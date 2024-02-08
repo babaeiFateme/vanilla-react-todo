@@ -433,6 +433,35 @@ a {
   overflow-y: auto;
 }
 
+.page-title {
+  position: relative;
+}
+.page-title .page-content {
+  border-radius: 18px;
+  padding: 9.5px 19px 9.5px 19px;
+  font-size: clamp(0.9rem, 0.8rem + 1.2vw, 1.3rem);
+  font-weight: 400;
+  background-color: red;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.page-title:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #2d2dcf;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 134px;
+  top: 20px;
+}
+
+.inner-content {
+  padding: 28px 32px;
+}
+
 .modal {
   position: absolute;
   background-color: white;
