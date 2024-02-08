@@ -104,5 +104,9 @@ a {
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: clamp(1rem, calc(0.9rem + 1.2vw), 1.5rem);
+}
+
+.gap-20 {
+    gap: 20px;
 }

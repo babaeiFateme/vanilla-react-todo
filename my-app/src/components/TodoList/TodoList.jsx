@@ -24,15 +24,15 @@ const TodoList = () => {
                         <div>
                             <Badge status={item.status} />
                         </div>
-                        <div>
+                        <div className="d-flex gap-20">
+                            <button className="btn">
+                                <BiSolidEdit className="fs-20 text-orange" />
+                            </button>
                             <button
                                 className="btn"
                                 onClick={() => deleteTodoHandler(item.id)}
                             >
                                 <BiTrash className="fs-20 text-red" />
-                            </button>
-                            <button className="btn">
-                                <BiSolidEdit className="fs-20 text-orange" />
                             </button>
                         </div>
                     </li>

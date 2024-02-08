@@ -28,7 +28,7 @@ const InnerLayout = ({ children }) => {
             title: formData.title,
             startTime: formData.startTime,
             endTime: formData.endTime,
-            status: 0,
+            status: "active",
         };
         handleAdd(newTodo);
 
