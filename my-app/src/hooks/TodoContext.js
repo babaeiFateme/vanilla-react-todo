@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import {
-    getLocalStorageItem,
-    setLocalStorageItem,
-} from "../core/services/storage/local-storage";
+import { getLocalStorageItem, setLocalStorageItem } from "./local-storage.services";
+
 
 const TodoContext = createContext();
 

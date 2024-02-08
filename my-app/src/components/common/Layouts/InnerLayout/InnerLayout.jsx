@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
-import useLocalStorage from "../../../../hooks/useLocalStorage";
 import Modal from "../../Modal/Modal";
 import { useTodoContext } from "../../../../hooks/TodoContext";
 

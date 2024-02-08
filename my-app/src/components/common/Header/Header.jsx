@@ -7,7 +7,7 @@ import { BiAlignRight } from "react-icons/bi";
 import Modal from "../Modal/Modal";
 import { useEffect, useState } from "react";
 
-import useLocalStorage from "../../../hooks/useLocalStorage";
+// import useLocalStorage from "../../../hooks/useLocalStorage";
 
 const Header = ({ isShow, sidebarHandler }) => {
 

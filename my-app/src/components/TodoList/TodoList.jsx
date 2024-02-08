@@ -1,7 +1,6 @@
 import { BiTrash } from "react-icons/bi";
 import { BiSolidEdit } from "react-icons/bi";
 import Badge from "../common/Badge/Badge";
-import { useEffect, useState } from "react";
 import { useTodoContext } from "../../hooks/TodoContext";
 
 const TodoList = () => {

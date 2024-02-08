@@ -8,11 +8,11 @@ const Badge = ({ status }) => {
      */
     const statusGenerate = () => {
         switch (status) {
-            case 0:
+            case "active":
                 return <span className="badge badge-green fw-700">active</span>;
-            case 1:
+            case "pending":
                 return <span className="badge badge-orange fw-700">pending</span>;
-            case 2:
+            case "complete":
                 return <span className="badge badge-red fw-700">complete</span>;
             default:
                 return null;

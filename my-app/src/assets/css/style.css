@@ -423,6 +423,11 @@ a {
   border: 1px solid #A3A3B9;
 }
 
+.todos {
+  max-height: calc(100vh - 225px);
+  overflow-y: auto;
+}
+
 .modal {
   position: absolute;
   background-color: white;
