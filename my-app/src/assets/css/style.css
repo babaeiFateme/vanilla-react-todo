@@ -371,6 +371,11 @@ header .header .header-box > div {
 .sidebar nav .link-box .item .item-link {
   padding: 10px 18px;
 }
+.sidebar nav .link-box .item .item-link.active {
+  background-color: rgba(28, 29, 34, 0.04);
+  padding: 10px, 18px, 10px, 18px;
+  border-radius: 18px;
+}
 .sidebar nav .link-box .item .item-link a {
   color: var(--clr-link);
 }

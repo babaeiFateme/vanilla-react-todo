@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 const Sidebar = ({ isShow, sidebarHandler }) => {
+    const location = useLocation();
+    console.log(location.pathname);
     return (
         <div className={`sidebar ${isShow ? "" : "closeSide"}`}>
             <div className="logo-box">
@@ -16,22 +17,40 @@ const Sidebar = ({ isShow, sidebarHandler }) => {
             <nav>
                 <ul className="link-box">
                     <li className="item">
-                        <div className="item-link">
+                        <div
+                            className={`item-link ${
+                                location.pathname === "/" ? "active" : ""
+                            }`}
+                        >
                             <Link to="/">AllTask</Link>
                         </div>
                     </li>
                     <li className="item">
-                        <div className="item-link">
+                        <div
+                            className={`item-link ${
+                                location.pathname === "/compelete"
+                                    ? "active"
+                                    : ""
+                            }`}
+                        >
                             <Link to="/compelete">Compelete</Link>
                         </div>
                     </li>
                     <li className="item">
-                        <div className="item-link">
+                        <div
+                            className={`item-link ${
+                                location.pathname === "/pending" ? "active" : ""
+                            }`}
+                        >
                             <Link to="/pending">Pending</Link>
                         </div>
                     </li>
                     <li className="item">
-                        <div className="item-link">
+                        <div
+                            className={`item-link ${
+                                location.pathname === "/active" ? "active" : ""
+                            }`}
+                        >
                             <Link to="/active">Active</Link>
                         </div>
                     </li>
