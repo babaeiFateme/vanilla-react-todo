@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { getLocalStorageItem, setLocalStorageItem } from "./local-storage.services";
-
+import {
+    getLocalStorageItem,
+    setLocalStorageItem,
+} from "./local-storage.services";
 
 const TodoContext = createContext();
 
@@ -10,13 +12,17 @@ export const TodoProvider = ({ children }) => {
     const [todos, setTodos] = useState(initialValue || []);
 
     const handleAdd = (todoRecord) => {
-        // setLocalStorageItem(storageKey, todoRecord)
         setTodos((current) => [...current, todoRecord]);
     };
 
     const handleDelete = (todoId) => {
         const filteredData = todos.filter((item) => item.id !== todoId);
         setTodos(filteredData);
+    };
+    const handleEdit = (updateTodo) => {
+        const filteredData = todos.filter((item) => item.id !== updateTodo.id);
+        setTodos(filteredData);
+        setTodos((current) => [...current, updateTodo]);
     };
 
     useEffect(() => {
@@ -26,6 +32,7 @@ export const TodoProvider = ({ children }) => {
     const value = {
         todos,
         handleAdd,
+        handleEdit,
         handleDelete,
     };
 
