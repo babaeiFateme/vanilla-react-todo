@@ -38,6 +38,34 @@ const TodoList = () => {
                     </li>
                 ))}
             </ul>
+
+            <ul className="todos-mobile">
+                {todos.map((item, index) => (
+                    <li className="item" key={index}>
+                        <div className="title">{item.title}</div>
+                        <div className="d-flex justify-between items-cente">
+                            <div className="time">{item.endTime}</div>
+                            <div className="time">{item.endTime}</div>
+                        </div>
+                        <div className="d-flex justify-between items-cente">
+                            <div>
+                                <Badge status={item.status} />
+                            </div>
+                            <div>
+                                <button
+                                    className="btn"
+                                    onClick={() => deleteTodoHandler(item.id)}
+                                >
+                                    <BiTrash className="fs-20 text-red" />
+                                </button>
+                                <button className="btn">
+                                    <BiSolidEdit className="fs-20 text-orange" />
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };

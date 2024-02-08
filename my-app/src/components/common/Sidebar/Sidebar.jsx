@@ -8,7 +8,7 @@ const Sidebar = ({ isShow, sidebarHandler }) => {
                 <h1>tasks</h1>
                 <button
                     onClick={sidebarHandler}
-                    className="sidebar-btn-handler d-flex"
+                    className="sidebar-btn-handler"
                 >
                     +
                 </button>
