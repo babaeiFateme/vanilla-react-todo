@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const Compeleted = () => {
-  return (
-    <div>Compelete</div>
-  )
-}
+import { useTodoContext } from "../../hooks/TodoContext";
+import TodoList from "../../components/TodoList/TodoList";
 
-export default Compeleted
+const Complete = () => {
+    const { todos } = useTodoContext();
+    const completeTodos = todos.filter((todo) => todo.status === "complete");
+
+    return (
+        <div>
+            <TodoList todosToShow={completeTodos} />
+        </div>
+    );
+};
+
+export default Complete;

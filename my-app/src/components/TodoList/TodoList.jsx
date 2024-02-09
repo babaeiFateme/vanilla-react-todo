@@ -1,13 +1,12 @@
 import { BiTrash } from "react-icons/bi";
 import { BiSolidEdit } from "react-icons/bi";
 import Badge from "../common/Badge/Badge";
-import { useTodoContext } from "../../hooks/TodoContext";
-import { useState } from "react";
 import Modal from "../common/Modal/Modal";
+import { useState } from "react";
+import { useTodoContext } from "../../hooks/TodoContext";
 
-const TodoList = () => {
-    const { todos, handleDelete, handleEdit, handleComplete } =
-        useTodoContext();
+const TodoList = ({ todosToShow }) => {
+    const { handleDelete, handleEdit, handleComplete } = useTodoContext();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [updateTodo, setUpdateTodo] = useState({});
 
@@ -44,10 +43,11 @@ const TodoList = () => {
             [name]: value,
         });
     };
+
     return (
         <div>
             <ul className="todos">
-                {todos.map((item, index) => (
+                {todosToShow.map((item, index) => (
                     <li className="item" key={item.id}>
                         <div className="title">
                             <span
@@ -81,41 +81,6 @@ const TodoList = () => {
                 ))}
             </ul>
 
-            <ul className="todos-mobile">
-                {todos.map((item, index) => (
-                    <li className="item" key={index}>
-                        <div className="title">
-                            <span
-                                onClick={() => completeTodoHandler(item)}
-                                className={`checkTodo ${
-                                    item.isComplete ? "bg-blue" : "jxhckzx"
-                                }`}
-                            ></span>
-                            {item.title}
-                        </div>
-                        <div className="d-flex justify-between items-cente">
-                            <div className="time">{item.startTime}</div>
-                            <div className="time">{item.endTime}</div>
-                        </div>
-                        <div className="d-flex justify-between items-cente">
-                            <div>
-                                <Badge status={item.status} />
-                            </div>
-                            <div>
-                                <button
-                                    className="btn"
-                                    onClick={() => deleteTodoHandler(item.id)}
-                                >
-                                    <BiTrash className="fs-20 text-red" />
-                                </button>
-                                <button className="btn">
-                                    <BiSolidEdit className="fs-20 text-orange" />
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
             <Modal
                 isOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}

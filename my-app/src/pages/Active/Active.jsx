@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+
+import { useTodoContext } from "../../hooks/TodoContext";
+import TodoList from "../../components/TodoList/TodoList";
 
 const Active = () => {
-  return (
-    <div>Active</div>
-  )
-}
+    const { todos } = useTodoContext();
+    const ActiveTodos = todos.filter((todo) => todo.status === "active");
 
-export default Active
+    return (
+        <div>
+            <TodoList todosToShow={ActiveTodos} />
+        </div>
+    );
+};
+
+export default Active;
