@@ -504,6 +504,20 @@ a {
     display: flex;
     flex-direction: column;
   }
+  .todos-mobile .item .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .todos-mobile .item .title .checkTodo {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid blue;
+  }
   .todos {
     display: none;
   }
