@@ -20,12 +20,25 @@ export const TodoProvider = ({ children }) => {
         setTodos(filteredData);
     };
     const handleEdit = (updateTodo) => {
-        const filteredData = todos.filter((item) => item.id !== updateTodo.id);
-        setTodos(filteredData);
-        setTodos((current) => [...current, updateTodo]);
+        const updatedTodos = todos.map((singleTodo) => {
+            if (singleTodo.id === updateTodo.id) {
+                // Return a new object with the updated properties
+                return {
+                    id:updateTodo.id,
+                    title: updateTodo.title,
+                    status: updateTodo.status,
+                    isComplete: updateTodo.isComplete,
+                    startTime: updateTodo.startTime,
+                    endTime: updateTodo.endTime,
+                };
+            }
+            return singleTodo;
+        });
+
+        setTodos(updatedTodos); 
     };
+
     const handleComplete = (todo) => {
-        console.log(todo);
         const updatedTodos = todos.map((singleTodo) => {
             if (singleTodo.id === todo.id) {
                 // Return a new object with the toggled isComplete property
@@ -35,7 +48,8 @@ export const TodoProvider = ({ children }) => {
                 };
             }
             return singleTodo;
-        });;
+        });
+
         setTodos(updatedTodos);
     };
 
