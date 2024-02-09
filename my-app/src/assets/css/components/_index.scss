@@ -75,6 +75,7 @@ a {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: clamp(1.2rem, calc(1rem + 1.3vw), 1.5rem) !important;
 
     .page-content {
         border-radius: 18px;

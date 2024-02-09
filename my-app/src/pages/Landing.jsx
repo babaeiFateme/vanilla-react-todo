@@ -7,7 +7,6 @@ const Landing = () => {
 
     return (
         <div>
-            <h1>All Todos</h1>
             <TodoList todosToShow={todos} />
         </div>
     );

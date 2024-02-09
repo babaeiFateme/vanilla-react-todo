@@ -18,7 +18,7 @@ const Sidebar = ({ isShow, sidebarHandler }) => {
                     <li className="item">
                         <div
                             className={`item-link ${
-                                location.pathname === "/" ? "active" : ""
+                                location.pathname === "/" ? "/" : ""
                             }`}
                         >
                             <Link to="/">AllTask</Link>
@@ -27,12 +27,12 @@ const Sidebar = ({ isShow, sidebarHandler }) => {
                     <li className="item">
                         <div
                             className={`item-link ${
-                                location.pathname === "/compelete"
-                                    ? "active"
+                                location.pathname === "/complete"
+                                    ? "complete"
                                     : ""
                             }`}
                         >
-                            <Link to="/compelete">Compelete</Link>
+                            <Link to="/complete">Complete</Link>
                         </div>
                     </li>
                     <li className="item">

@@ -3,6 +3,7 @@ import { CiCirclePlus } from "react-icons/ci";
 import Modal from "../../Modal/Modal";
 import { useTodoContext } from "../../../../hooks/TodoContext";
 import { useLocation } from "react-router-dom";
+import BoradView from "../../BoradView/BoradView";
 
 const InnerLayout = ({ children }) => {
     const location = useLocation();
@@ -70,12 +71,7 @@ const InnerLayout = ({ children }) => {
                 </button>
             </div>
             <div>
-                <h1 className="page-title">
-                    <span className="page-content">
-                        {pageTitle === "" ? "Tasks" : pageTitle}
-                    </span>
-                    <hr />
-                </h1>
+                <BoradView pageTitle={pageTitle === "" ? "Tasks" : pageTitle} />
                 {children}
             </div>
 
