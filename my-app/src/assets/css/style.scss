@@ -15,9 +15,4 @@ body {
 
 @import "./base/variables";
 @import "./base/fonts";
-@import "./mixin/mixin";
-@import "./components/component";
-@import "./components/header";
-@import "./components/sidebar";
-@import "./components/content";
-@import "./components/modal";
+@import "./components/index";
