@@ -449,6 +449,8 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  max-width: 240px;
+  width: 100%;
 }
 .todos .item .title .checkTodo {
   width: 30px;

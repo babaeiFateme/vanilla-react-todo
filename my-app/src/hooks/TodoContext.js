@@ -67,6 +67,7 @@ export const TodoProvider = ({ children }) => {
                 return {
                     ...singleTodo,
                     isComplete: !singleTodo.isComplete,
+                    status: !singleTodo.isComplete ? "complete" : "active", 
                 };
             }
             return singleTodo;
