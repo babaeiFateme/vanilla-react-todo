@@ -1,18 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-}
-
-.wrapper {
-    height: calc(100vh - 70px);
-    background-image: linear-gradient(to left, #fff 95%, #f1f0f0)
-}
-
 @import "./base/variables";
+@import "./base/initializer";
 @import "./base/fonts";
 @import "./components/index";
