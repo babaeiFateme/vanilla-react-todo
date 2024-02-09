@@ -76,11 +76,11 @@ export const TodoProvider = ({ children }) => {
         setTodos(updatedTodos);
     };
 
-    const updateStatusBasedOnEndTime = () => {
+    const updateTodosBasedOnEndTime = (todos, setTodos, storageKey) => {
         const updatedTodos = todos.map((todo) => {
             if (
                 new Date(todo.endTime).getTime() - Date.now() <
-                24 * 60 * 60 * 1000 // Check if the end time is less than current hours
+                24 * 60 * 60 * 1000 
             ) {
                 return {
                     ...todo,
@@ -89,14 +89,20 @@ export const TodoProvider = ({ children }) => {
             }
             return todo;
         });
-        setTodos(updatedTodos);
+    
+        // Only update state if there are changes
+        if (JSON.stringify(updatedTodos) !== JSON.stringify(todos)) {
+            setTodos(updatedTodos);
+            setLocalStorageItem(storageKey, updatedTodos);
+        }
     };
-
+    
     useEffect(() => {
-        updateStatusBasedOnEndTime();
-        setLocalStorageItem(storageKey, todos);
-    }, [todos]);
-
+        updateTodosBasedOnEndTime(todos, setTodos, storageKey);
+        setLocalStorageItem(storageKey, todos); 
+    }, [todos, storageKey]);
+    
+    
     const value = {
         todos,
         handleAdd,
