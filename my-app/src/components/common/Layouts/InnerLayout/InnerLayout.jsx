@@ -15,6 +15,7 @@ const InnerLayout = ({ children }) => {
         startTime: "",
         endTime: "",
         status: "",
+        isComplete: false,
     });
 
     const modalHandler = () => {
@@ -29,6 +30,7 @@ const InnerLayout = ({ children }) => {
             startTime: formData.startTime,
             endTime: formData.endTime,
             status: "active",
+            isComplete: false,
         };
         handleAdd(newTodo);
 

@@ -24,6 +24,20 @@ export const TodoProvider = ({ children }) => {
         setTodos(filteredData);
         setTodos((current) => [...current, updateTodo]);
     };
+    const handleComplete = (todo) => {
+        console.log(todo);
+        const updatedTodos = todos.map((singleTodo) => {
+            if (singleTodo.id === todo.id) {
+                // Return a new object with the toggled isComplete property
+                return {
+                    ...singleTodo,
+                    isComplete: !singleTodo.isComplete,
+                };
+            }
+            return singleTodo;
+        });;
+        setTodos(updatedTodos);
+    };
 
     useEffect(() => {
         setLocalStorageItem(storageKey, todos);
@@ -34,6 +48,7 @@ export const TodoProvider = ({ children }) => {
         handleAdd,
         handleEdit,
         handleDelete,
+        handleComplete,
     };
 
     return (

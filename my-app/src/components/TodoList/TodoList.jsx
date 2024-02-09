@@ -6,7 +6,8 @@ import { useState } from "react";
 import Modal from "../common/Modal/Modal";
 
 const TodoList = () => {
-    const { todos, handleDelete, handleEdit } = useTodoContext();
+    const { todos, handleDelete, handleEdit, handleComplete } =
+        useTodoContext();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [updateTodo, setUpdateTodo] = useState({});
 
@@ -18,16 +19,20 @@ const TodoList = () => {
         setIsModalOpen(!isModalOpen);
         setUpdateTodo(item);
     };
+    const completeTodoHandler = (item) => {
+        handleComplete(item);
+    };
     const generateTodoHandler = (e) => {
         e.preventDefault();
-        const newTodo = {
+        const updateData = {
             id: updateTodo.id,
             title: updateTodo.title,
             startTime: updateTodo.startTime,
             endTime: updateTodo.endTime,
             status: updateTodo.status,
+            isComplete: updateTodo.isComplete,
         };
-        handleEdit(newTodo);
+        handleEdit(updateData);
 
         // Close the modal
         setIsModalOpen(false);
@@ -44,7 +49,15 @@ const TodoList = () => {
             <ul className="todos">
                 {todos.map((item, index) => (
                     <li className="item" key={item.id}>
-                        <div className="title">{item.title}</div>
+                        <div className="title">
+                            <span
+                                onClick={() => completeTodoHandler(item)}
+                                className={`checkTodo ${
+                                    item.isComplete ? "bg-blue" : "jxhckzx"
+                                }`}
+                            ></span>
+                            {item.title}
+                        </div>
                         <div className="time">{item.startTime}</div>
                         <div className="time">{item.endTime}</div>
                         <div>
@@ -71,7 +84,15 @@ const TodoList = () => {
             <ul className="todos-mobile">
                 {todos.map((item, index) => (
                     <li className="item" key={index}>
-                        <div className="title">{item.title}</div>
+                        <div className="title">
+                            <span
+                                onClick={() => completeTodoHandler(item)}
+                                className={`checkTodo ${
+                                    item.isComplete ? "bg-blue" : "jxhckzx"
+                                }`}
+                            ></span>
+                            {item.title}
+                        </div>
                         <div className="d-flex justify-between items-cente">
                             <div className="time">{item.startTime}</div>
                             <div className="time">{item.endTime}</div>
