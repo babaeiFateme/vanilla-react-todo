@@ -130,13 +130,13 @@ const TodoList = ({ todosToShow }) => {
 
                     <div className="form-handler">
                         <button
-                            className="btn btn-blue"
+                            className="btn btn-gray"
                             type="button"
                             onClick={() => setIsModalOpen(false)}
                         >
                             discard
                         </button>
-                        <button className="btn btn-gray" type="submit">
+                        <button className="btn btn-blue" type="submit">
                             save
                         </button>
                     </div>
