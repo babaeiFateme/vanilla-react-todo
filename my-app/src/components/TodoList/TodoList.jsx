@@ -9,6 +9,7 @@ const TodoList = ({ todosToShow }) => {
     const { handleDelete, handleEdit, handleComplete } = useTodoContext();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [updateTodo, setUpdateTodo] = useState({});
+    const [errorMessage, setErrorMessage] = useState("");
 
     const deleteTodoHandler = (id) => {
         handleDelete(id);
@@ -23,6 +24,10 @@ const TodoList = ({ todosToShow }) => {
     };
     const generateTodoHandler = (e) => {
         e.preventDefault();
+        if (!updateTodo.title || !updateTodo.startTime || !updateTodo.endTime) {
+            setErrorMessage("Please fill in all fields.");
+            return;
+        }
         const updateData = {
             id: updateTodo.id,
             title: updateTodo.title,
@@ -86,6 +91,9 @@ const TodoList = ({ todosToShow }) => {
                 setIsModalOpen={setIsModalOpen}
                 title="Edit Task"
             >
+                {errorMessage && (
+                    <div className="error-message">{errorMessage}</div>
+                )}
                 <form onSubmit={generateTodoHandler}>
                     <div>
                         <div className="form-group">
