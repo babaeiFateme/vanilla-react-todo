@@ -20,8 +20,12 @@ body {
   --clr-red: #F06A6D;
   --clr-link: rgba(28, 29, 34, 0.5);
   --clr-blue: #669ce3;
+  --clr-dark-blue: blue;
+  --clr-light-gray: #eee;
+  --clr-mid-gray: #A3A3B9;
   --clr-white: #fff;
   --clr-mid-black: #1C1D22;
+  --clr-bg-content: rgba(28, 29, 34, 0.06);
 }
 
 .fs-13 {
@@ -156,17 +160,17 @@ body {
 
 .btn-black {
   background-color: var(--clr-black) !important;
-  color: var(--clr-black) !important;
+  color: var(--clr-white) !important;
   padding: 0.75rem 1.5rem;
 }
 .btn-black:hover, .btn-black:active, .btn-black:focus {
   background-color: var(--clr-black) !important;
-  color: var(--clr-black) !important;
+  color: var(--clr-white) !important;
 }
 
 .bg-black {
   background-color: var(--clr-black) !important;
-  color: var(--clr-black) !important;
+  color: var(--clr-white) !important;
 }
 
 .text-black {
@@ -175,7 +179,7 @@ body {
 
 .badge-black {
   background-color: var(--clr-black);
-  color: var(--clr-black);
+  color: var(--clr-white);
   padding: 8px 16px;
   border-radius: 16px;
 }
@@ -357,6 +361,7 @@ header .header .header-box > div {
   background-color: rgba(28, 29, 34, 0.08);
   color: gray;
   border: 2px solid rgb(192, 192, 192);
+  cursor: pointer;
 }
 .sidebar nav .link-box {
   border-left: 2px solid var(--clr-link);
@@ -396,7 +401,7 @@ header .header .header-box > div {
 @media (max-width: 992px) {
   .sidebar {
     position: absolute;
-    background-color: white;
+    background-color: var(--clr-white);
     height: 100%;
     z-index: 300;
   }
@@ -414,7 +419,7 @@ main {
 }
 main .content {
   flex-grow: 1;
-  background-color: rgba(28, 29, 34, 0.06);
+  background-color: var(--clr-bg-content);
 }
 
 .d-none {
@@ -443,7 +448,7 @@ a {
   margin-bottom: 15px;
   padding: 12px 36px;
   border-radius: 20px;
-  border: 1px solid #A3A3B9;
+  border: 1px solid var(--clr-mid-gray);
   gap: 30px;
 }
 .todos .item .time {
@@ -463,7 +468,7 @@ a {
   flex-shrink: 0;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 4px solid blue;
+  border: 4px solid var(--clr-dark-blue);
 }
 
 .page-title {
@@ -474,13 +479,13 @@ a {
 }
 .page-title .page-content {
   padding: 9.5px 19px 9.5px 19px;
-  color: white;
+  color: var(--clr-white);
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
 }
 .page-title hr {
-  background-color: #eee;
+  background-color: var(--clr-light-gray);
   width: 100%;
 }
 

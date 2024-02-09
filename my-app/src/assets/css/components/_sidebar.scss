@@ -24,6 +24,7 @@
             background-color: rgba(28, 29, 34, 0.08);
             color: gray;
             border: 2px solid rgb(192, 192, 192);
+            cursor: pointer;
         }
     }
 
@@ -75,7 +76,7 @@
 @media(max-width:992px) {
     .sidebar {
         position: absolute;
-        background-color: white;
+        background-color: var(--clr-white);
         height: 100%;
         z-index: 300;
     }

@@ -5,8 +5,12 @@
     --clr-red: #F06A6D;
     --clr-link: rgba(28, 29, 34, 0.5);
     --clr-blue: #669ce3;
+    --clr-dark-blue: blue;
+    --clr-light-gray: #eee;
+    --clr-mid-gray: #A3A3B9;
     --clr-white: #fff;
     --clr-mid-black: #1C1D22;
+    --clr-bg-content: rgba(28, 29, 34, 0.06);
 
 }
 
@@ -14,7 +18,7 @@ $colors: (
     "green" var(--clr-green) var(--clr-white),
     "orange" var(--clr-orange) var(--clr-white),
     "red" var(--clr-red) var(--clr-white),
-    "black" var(--clr-black) var(--clr-black),
+    "black" var(--clr-black) var(--clr-white),
     "gray" var(--clr-link) var(--clr-white),
     "blue" var(--clr-blue) var(--clr-white),
 );
