@@ -473,18 +473,14 @@ a {
   font-size: clamp(1.2rem, 1rem + 1.3vw, 1.5rem) !important;
 }
 .page-title .page-content {
-  border-radius: 18px;
   padding: 9.5px 19px 9.5px 19px;
-  font-size: clamp(0.9rem, 0.8rem + 1.2vw, 1.3rem);
-  font-weight: 400;
-  background-color: red;
   color: white;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
 }
 .page-title hr {
-  background-color: red;
+  background-color: #eee;
   width: 100%;
 }
 
@@ -524,7 +520,7 @@ h2 {
 .error-message {
   text-align: center;
   font-weight: 600;
-  color: red;
+  color: var(--clr-red);
   margin: 20px auto;
 }
 

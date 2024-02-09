@@ -12,7 +12,6 @@ main {
     .content {
         flex-grow: 1;
         background-color: rgba(28, 29, 34, 0.06);
-        // position: relative;
 
     }
 }
@@ -75,33 +74,25 @@ a {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+
     font-size: clamp(1.2rem, calc(1rem + 1.3vw), 1.5rem) !important;
 
     .page-content {
-        border-radius: 18px;
         padding: 9.5px 19px 9.5px 19px;
-        font-size: clamp(0.9rem, calc(0.8rem + 1.2vw), 1.3rem);
-        font-weight: 400;
-        background-color: red;
         color: white;
         width: fit-content;
         position: relative;
     }
 
     hr {
-        background-color: red;
+        background-color: #eee;
         width: 100%;
     }
 }
 
 .inner-content {
     padding: 28px 32px;
-    ;
 }
-
-// .todos-mobile {
-//     display: none;
-// }
 
 @media(max-width:992px) {
 
@@ -142,6 +133,6 @@ h2 {
 .error-message {
     text-align: center;
     font-weight: 600;
-    color: red;
+    color: var(--clr-red);
     margin: 20px auto;
 }

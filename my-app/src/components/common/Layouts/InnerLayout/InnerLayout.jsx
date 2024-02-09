@@ -80,7 +80,7 @@ const InnerLayout = ({ children }) => {
                 setIsModalOpen={setIsModalOpen}
                 title="Add Task"
             >
-                show when we have error
+                {/* show when we have error */}
                 {errorMessage && (
                     <div className="error-message">{errorMessage}</div>
                 )}
