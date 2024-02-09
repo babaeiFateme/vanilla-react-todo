@@ -5,10 +5,10 @@ import {
 } from "./local-storage.services";
 
 const TodoContext = createContext();
-
+const STORAGE_KEY = "todos";
 export const TodoProvider = ({ children }) => {
-    const storageKey = "todos";
-    const initialValue = getLocalStorageItem(storageKey);
+    // const storageKey = "todos";
+    const initialValue = getLocalStorageItem(STORAGE_KEY);
     const [todos, setTodos] = useState(initialValue || []);
 
     /**
@@ -67,7 +67,7 @@ export const TodoProvider = ({ children }) => {
                 return {
                     ...singleTodo,
                     isComplete: !singleTodo.isComplete,
-                    status: !singleTodo.isComplete ? "complete" : "active", 
+                    status: !singleTodo.isComplete ? "complete" : "active",
                 };
             }
             return singleTodo;
@@ -80,7 +80,7 @@ export const TodoProvider = ({ children }) => {
         const updatedTodos = todos.map((todo) => {
             if (
                 new Date(todo.endTime).getTime() - Date.now() <
-                24 * 60 * 60 * 1000 
+                24 * 60 * 60 * 1000
             ) {
                 return {
                     ...todo,
@@ -89,20 +89,19 @@ export const TodoProvider = ({ children }) => {
             }
             return todo;
         });
-    
+
         // Only update state if there are changes
         if (JSON.stringify(updatedTodos) !== JSON.stringify(todos)) {
             setTodos(updatedTodos);
             setLocalStorageItem(storageKey, updatedTodos);
         }
     };
-    
+
     useEffect(() => {
-        updateTodosBasedOnEndTime(todos, setTodos, storageKey);
-        setLocalStorageItem(storageKey, todos); 
-    }, [todos, storageKey]);
-    
-    
+        updateTodosBasedOnEndTime(todos, setTodos, STORAGE_KEY);
+        setLocalStorageItem(STORAGE_KEY, todos);
+    }, [todos, STORAGE_KEY]);
+
     const value = {
         todos,
         handleAdd,
