@@ -60,10 +60,10 @@ const TodoList = ({ todosToShow }) => {
                         </div>
                         <div className="time">{item.startTime}</div>
                         <div className="time">{item.endTime}</div>
-                        <div>
+                        <div className="status-container">
                             <Badge status={item.status} />
                         </div>
-                        <div className="d-flex gap-20">
+                        <div className="d-flex gap-20 actions">
                             <button
                                 className="btn"
                                 onClick={() => editTodoHandler(item)}

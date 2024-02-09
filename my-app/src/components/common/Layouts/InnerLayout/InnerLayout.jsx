@@ -8,6 +8,7 @@ const InnerLayout = ({ children }) => {
     const location = useLocation();
     const pageTitle = location.pathname.replace("/", "");
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const { handleAdd } = useTodoContext();
     const [formData, setFormData] = useState({
@@ -24,6 +25,10 @@ const InnerLayout = ({ children }) => {
 
     const generateTodoHandler = (e) => {
         e.preventDefault();
+        if (!formData.title || !formData.startTime || !formData.endTime) {
+            setErrorMessage("Please fill in all fields.");
+            return;
+        }
         const newTodo = {
             id: Math.floor(Math.random() * 1000),
             title: formData.title,
@@ -79,6 +84,10 @@ const InnerLayout = ({ children }) => {
                 setIsModalOpen={setIsModalOpen}
                 title="Add Task"
             >
+                show when we have error
+                {errorMessage && (
+                    <div className="error-message">{errorMessage}</div>
+                )}
                 <form onSubmit={generateTodoHandler}>
                     <div>
                         <div className="form-group">

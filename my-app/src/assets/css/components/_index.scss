@@ -44,6 +44,12 @@ a {
         padding: 12px 36px;
         border-radius: 20px;
         border: 1px solid #A3A3B9;
+        gap: 30px;
+
+        // flex-wrap: wrap;
+        .time {
+            flex-shrink: 0;
+        }
 
         .title {
             display: flex;
@@ -92,45 +98,35 @@ a {
     ;
 }
 
-.todos-mobile {
-    display: none;
-}
+// .todos-mobile {
+//     display: none;
+// }
 
 @media(max-width:992px) {
-    .todos-mobile {
-        display: block;
-
-        .item {
-            width: 100%;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid #A3A3B9;
-            gap: 20px;
-            display: flex;
-            flex-direction: column;
-
-            .title {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-
-                .checkTodo {
-                    width: 30px;
-                    height: 30px;
-                    display: inline-block;
-                    flex-shrink: 0;
-                    aspect-ratio: 1;
-                    border-radius: 50%;
-                    border: 4px solid blue;
-                }
-            }
-        }
-    }
 
     .todos {
-        display: none;
+        .item {
+            flex-direction: column;
+            gap: 30px;
+            align-items: unset;
+
+            .status-container {
+                order: 1;
+                max-width: fit-content;
+            }
+
+            .title {
+                order: 2;
+            }
+
+            .time {
+                order: 3;
+            }
+
+            .actions {
+                order: 4;
+            }
+        }
     }
 }
 
@@ -140,4 +136,11 @@ h2 {
 
 .gap-20 {
     gap: 20px;
+}
+
+.error-message {
+    text-align: center;
+    font-weight: 600;
+    color: red;
+    margin: 20px auto;
 }
