@@ -50,68 +50,72 @@ const TodoList = ({ todosToShow }) => {
     };
 
     return (
-        <div className="table-wrapper ">
-            {todosToShow && (
-                <table className="todos">
-                    <tr>
-                        <td></td>
-                        <td className="text-center text-gray">
-                            create fetch todo
-                        </td>
-                        <td className="text-center text-gray">
-                            create fetch todo
-                        </td>
-                        <td className="text-center text-gray">status</td>
-                        <td className="text-center"></td>
-                    </tr>
-                    {todosToShow.map((item) => (
-                        <tr className="item" key={item.id}>
-                            <td>
-                                <div className="title">
-                                    <span
-                                        onClick={() =>
-                                            completeTodoHandler(item)
-                                        }
-                                        className={`checkTodo ${
-                                            item.isComplete
-                                                ? "bg-blue"
-                                                : "jxhckzx"
-                                        }`}
-                                    ></span>
-                                    {item.title}
-                                </div>
+        <>
+            <div className="table-wrapper ">
+                {todosToShow && (
+                    <table className="todos">
+                        <tr>
+                            <td></td>
+                            <td className="text-center text-gray">
+                                create fetch todo
                             </td>
-                            <td className="time text-center nowrap">
-                                <div>{item.startTime}</div>
+                            <td className="text-center text-gray">
+                                create fetch todo
                             </td>
-                            <td className="time text-center nowrap">
-                                <div>{item.endTime}</div>
-                            </td>
-                            <td className="status-container text-center">
-                                <Badge status={item.status} />
-                            </td>
-                            <td>
-                                <div className="action">
-                                    <button
-                                        className="btn"
-                                        onClick={() => editTodoHandler(item)}
-                                    >
-                                        <BiSolidEdit className="fs-20 text-orange" />
-                                    </button>
-                                    <button
-                                        className="btn"
-                                        onClick={() =>
-                                            deleteTodoHandler(item.id)
-                                        }
-                                    >
-                                        <BiTrash className="fs-20 text-red" />
-                                    </button>
-                                </div>
-                            </td>
+                            <td className="text-center text-gray">status</td>
+                            <td className="text-center"></td>
                         </tr>
-                    ))}
-                </table>
-            )}
+                        {todosToShow.map((item) => (
+                            <tr className="item" key={item.id}>
+                                <td>
+                                    <div className="title">
+                                        <span
+                                            onClick={() =>
+                                                completeTodoHandler(item)
+                                            }
+                                            className={`checkTodo ${
+                                                item.isComplete
+                                                    ? "bg-blue"
+                                                    : "jxhckzx"
+                                            }`}
+                                        ></span>
+                                        {item.title}
+                                    </div>
+                                </td>
+                                <td className="time text-center nowrap">
+                                    <div>{item.startTime}</div>
+                                </td>
+                                <td className="time text-center nowrap">
+                                    <div>{item.endTime}</div>
+                                </td>
+                                <td className="status-container text-center">
+                                    <Badge status={item.status} />
+                                </td>
+                                <td>
+                                    <div className="action">
+                                        <button
+                                            className="btn"
+                                            onClick={() =>
+                                                editTodoHandler(item)
+                                            }
+                                        >
+                                            <BiSolidEdit className="fs-20 text-orange" />
+                                        </button>
+                                        <button
+                                            className="btn"
+                                            onClick={() =>
+                                                deleteTodoHandler(item.id)
+                                            }
+                                        >
+                                            <BiTrash className="fs-20 text-red" />
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))}
+                    </table>
+                )}
+            </div>
             {todosToShow && (
                 <ul className="todos-mobile">
                     {todosToShow.map((item) => (
@@ -220,7 +224,7 @@ const TodoList = ({ todosToShow }) => {
                     </div>
                 </form>
             </Modal>
-        </div>
+        </>
     );
 };
 

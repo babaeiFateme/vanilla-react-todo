@@ -24,7 +24,7 @@ main {
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
-    height: 538px;
+    max-height: 538px;
 }
 
 .todos {
