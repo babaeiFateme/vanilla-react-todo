@@ -57,10 +57,10 @@ const TodoList = ({ todosToShow }) => {
                         <tr>
                             <td></td>
                             <td className="text-center text-gray">
-                                create fetch todo
+                                fecha de creación
                             </td>
                             <td className="text-center text-gray">
-                                create fetch todo
+                                fecha de entrega
                             </td>
                             <td className="text-center text-gray">status</td>
                             <td className="text-center"></td>
@@ -138,13 +138,13 @@ const TodoList = ({ todosToShow }) => {
                             </div>
                             <div className="time mb-2 d-flex justify-between">
                                 <span className="text-gray">
-                                    create todo title:
+                                    fecha de creación
                                 </span>
                                 <span>{item.startTime}</span>
                             </div>
                             <div className="time mb-2 d-flex justify-between">
                                 <span className="text-gray">
-                                    expire todo time
+                                    fecha de entrega
                                 </span>
                                 <span>{item.endTime}</span>
                             </div>
