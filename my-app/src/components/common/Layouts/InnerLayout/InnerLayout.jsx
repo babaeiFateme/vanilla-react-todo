@@ -5,7 +5,7 @@ import { useTodoContext } from "../../../../hooks/TodoContext";
 import { useLocation } from "react-router-dom";
 import BoradView from "../../BoradView/BoradView";
 
-const InnerLayout = ({ children }) => {
+const InnerLayout = ({ children ,isShow }) => {
     const location = useLocation();
     const pageTitle = location.pathname.replace("/", "");
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,7 +58,7 @@ const InnerLayout = ({ children }) => {
         });
     };
     return (
-        <div className="inner-content">
+        <div className={`inner-content ${isShow? "responsive-width":""} `}>
             <div className="board-view">
                 <h3>Board view</h3>
 

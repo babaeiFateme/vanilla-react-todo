@@ -1,7 +1,57 @@
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
 .d-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.mb-3 {
+    margin-bottom: 48px;
+}
+
+.gap-2 {
+    gap: 8px;
+}
+
+
+.gap-20 {
+    gap: 20px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+h2 {
+    font-size: clamp(1rem, calc(0.9rem + 1.2vw), 1.5rem);
+}
+
+a {
+    text-decoration: none;
+    color: unset;
 }
 
 main {
@@ -16,45 +66,47 @@ main {
     }
 }
 
-.d-none {
-    display: none;
-}
 
-.d-block {
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: unset;
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
 }
 
 .todos {
-    padding: 32px 0;
     max-height: calc(100vh - 290px);
     overflow-y: auto;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    max-width: 100vw;
 
-    .item {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        padding: 12px 36px;
-        border-radius: 20px;
-        border: 1px solid var(--clr-mid-gray);
-        gap: 30px;
+    tr {
+        td {
+            border-top: 1px solid var(--clr-mid-gray);
+            border-bottom: 1px solid var(--clr-mid-gray);
 
-        .time {
-            flex-shrink: 0;
+            &>div {
+
+                padding: 12px 34px;
+            }
+
+            &:first-child {
+                border-left: 1px solid var(--clr-mid-gray);
+                border-radius: 20px 0 0 20px;
+                padding: 10px;
+            }
+
+            &:last-child {
+                border-right: 1px solid var(--clr-mid-gray);
+                border-radius: 0 20px 20px 0;
+            }
         }
 
         .title {
             display: flex;
-            align-items: center;
             gap: 10px;
-            max-width: 240px;
-            width: 100%;
+            align-items: center;
 
             .checkTodo {
                 width: 30px;
@@ -66,6 +118,25 @@ a {
                 border: 4px solid var(--clr-dark-blue);
             }
         }
+
+        .action {
+            display: flex;
+            justify-content: center;
+
+            button {
+
+                &:first-child {
+                    margin-right: 27px;
+                }
+            }
+        }
+
+        &:first-child {
+            td {
+                border: none;
+            }
+        }
+
     }
 }
 
@@ -93,45 +164,78 @@ a {
     padding: 28px 32px;
 }
 
+.responsive-width {
+    width: calc(100vw - 334px);
+}
+
 @media(max-width:992px) {
-
-    .todos {
-        .item {
-            flex-direction: column;
-            gap: 30px;
-            align-items: unset;
-
-            .status-container {
-                order: 1;
-                max-width: fit-content;
-            }
-
-            .title {
-                order: 2;
-            }
-
-            .time {
-                order: 3;
-            }
-
-            .actions {
-                order: 4;
-            }
-        }
+    .responsive-width {
+        width: unset;
     }
 }
 
-h2 {
-    font-size: clamp(1rem, calc(0.9rem + 1.2vw), 1.5rem);
-}
 
-.gap-20 {
-    gap: 20px;
-}
 
 .error-message {
     text-align: center;
     font-weight: 600;
     color: var(--clr-red);
     margin: 20px auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.todos-mobile {
+    display: none;
+}
+
+@media(max-width:992px) {
+    .inner-content {
+        padding: 20px;
+    }
+
+    .wrapper {
+        height: unset;
+    }
+
+    .todos {
+        display: none;
+    }
+
+
+    .todos-mobile {
+        display: block;
+        list-style: none;
+        max-height: 600px;
+        overflow-y: auto;
+
+        li {
+            padding: 20px;
+            border: 1px solid var(--clr-mid-gray);
+            border-radius: 20px;
+            margin-bottom: 25px;
+
+            .title {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .checkTodo {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    flex-shrink: 0;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    border: 4px solid var(--clr-dark-blue);
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }

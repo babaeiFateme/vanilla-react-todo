@@ -5,7 +5,7 @@ import Header from "../../Header/Header";
 import InnerLayout from "../InnerLayout/InnerLayout";
 import { TodoProvider } from "../../../../hooks/TodoContext";
 
-const PanelLayout = ({ children }) => {
+const PanelLayout = () => {
     const [isShow, setIsShow] = useState(true);
     const sidebarHandler = () => {
         setIsShow(!isShow);
@@ -17,7 +17,7 @@ const PanelLayout = ({ children }) => {
                 <Header isShow={isShow} sidebarHandler={sidebarHandler} />
                 <div className="wrapper">
                     <TodoProvider>
-                        <InnerLayout>
+                        <InnerLayout isShow={isShow}>
                             <Outlet />
                         </InnerLayout>
                     </TodoProvider>
