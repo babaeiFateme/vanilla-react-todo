@@ -1,13 +1,9 @@
 import { BiSearch } from "react-icons/bi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { MdOutlineDateRange } from "react-icons/md";
-import { CiCirclePlus } from "react-icons/ci";
 import { BiAlignRight } from "react-icons/bi";
 
-import Modal from "../Modal/Modal";
-import { useEffect, useState } from "react";
 
-// import useLocalStorage from "../../../hooks/useLocalStorage";
 
 const Header = ({ isShow, sidebarHandler }) => {
 
