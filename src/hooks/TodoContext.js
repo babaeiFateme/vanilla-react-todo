@@ -7,7 +7,6 @@ import {
 const TodoContext = createContext();
 const STORAGE_KEY = "todos";
 export const TodoProvider = ({ children }) => {
-    // const storageKey = "todos";
     const initialValue = getLocalStorageItem(STORAGE_KEY);
     const [todos, setTodos] = useState(initialValue || []);
 
@@ -51,32 +50,8 @@ export const TodoProvider = ({ children }) => {
 
             return singleTodo;
         });
-        const currentTime = Date.now();
-        const updatedTodosWithStatus = updatedTodos.map((todo) => {
-            if (
-                todo.endTime &&
-                new Date(todo.endTime).getTime() > currentTime &&
-                updateTodo.isComplete === false
-            ) {
-                return {
-                    ...todo,
-                    status: "active",
-                };
-            }
-            if (
-                todo.endTime &&
-                new Date(todo.endTime).getTime() > currentTime &&
-                updateTodo.isComplete === true
-            ) {
-                return {
-                    ...todo,
-                    status: "complete",
-                };
-            }
-            return todo;
-        });
 
-        setTodos(updatedTodosWithStatus);
+        setTodos(updatedTodos);
     };
 
     /**
