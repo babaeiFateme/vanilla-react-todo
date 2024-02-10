@@ -36,7 +36,6 @@ export const TodoProvider = ({ children }) => {
      * @Desc: this function edit todo and add in local stroage
      */
     const handleEdit = (updateTodo) => {
-        console.log(updateTodo);
         const updatedTodos = todos.map((singleTodo) => {
             if (singleTodo.id === updateTodo.id) {
                 // Return a new object with the updated properties
@@ -49,10 +48,35 @@ export const TodoProvider = ({ children }) => {
                     endTime: updateTodo.endTime,
                 };
             }
+
             return singleTodo;
         });
+        const currentTime = Date.now();
+        const updatedTodosWithStatus = updatedTodos.map((todo) => {
+            if (
+                todo.endTime &&
+                new Date(todo.endTime).getTime() > currentTime &&
+                updateTodo.isComplete === false
+            ) {
+                return {
+                    ...todo,
+                    status: "active",
+                };
+            }
+            if (
+                todo.endTime &&
+                new Date(todo.endTime).getTime() > currentTime &&
+                updateTodo.isComplete === true
+            ) {
+                return {
+                    ...todo,
+                    status: "complete",
+                };
+            }
+            return todo;
+        });
 
-        setTodos(updatedTodos);
+        setTodos(updatedTodosWithStatus);
     };
 
     /**
