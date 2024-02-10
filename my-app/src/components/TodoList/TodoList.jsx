@@ -104,7 +104,7 @@ const TodoList = ({ todosToShow }) => {
             <ul className="todos-mobile">
                 {todosToShow.map((item) => (
                     <li className="item" key={item.id}>
-                        <div className=" d-flex justify-between mb-2 flex-wrap gap-2">
+                        <div className="gap-20 d-flex justify-between mb-2 flex-wrap gap-2">
                             <div className="title">
                                 <span
                                     onClick={() => completeTodoHandler(item)}
