@@ -1,7 +1,11 @@
+import React from "react";
+
 import { Link, useLocation } from "react-router-dom";
+import { useTodoContext } from "../../../hooks/TodoContext";
 
 const Sidebar = ({ isShow, sidebarHandler }) => {
     const location = useLocation();
+    const { todos } = useTodoContext();
     return (
         <div className={`sidebar ${isShow ? "" : "closeSide"}`}>
             <div className="logo-box">
@@ -21,7 +25,7 @@ const Sidebar = ({ isShow, sidebarHandler }) => {
                                 location.pathname === "/" ? "active" : ""
                             }`}
                         >
-                            <Link to="/">AllTask</Link>
+                            <Link to="/">AllTask ({todos.length})</Link>
                         </div>
                     </li>
                     <li className="item">

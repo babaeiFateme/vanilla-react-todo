@@ -12,17 +12,17 @@ const PanelLayout = () => {
     };
     return (
         <main>
-            <Sidebar isShow={isShow} sidebarHandler={sidebarHandler} />
-            <div className="content">
-                <Header isShow={isShow} sidebarHandler={sidebarHandler} />
-                <div className="wrapper">
-                    <TodoProvider>
+            <TodoProvider>
+                <Sidebar isShow={isShow} sidebarHandler={sidebarHandler} />
+                <div className="content">
+                    <Header isShow={isShow} sidebarHandler={sidebarHandler} />
+                    <div className="wrapper">
                         <InnerLayout isShow={isShow}>
                             <Outlet />
                         </InnerLayout>
-                    </TodoProvider>
+                    </div>
                 </div>
-            </div>
+            </TodoProvider>
         </main>
     );
 };
