@@ -194,6 +194,8 @@ main {
 @media(max-width:992px) {
     .inner-content {
         padding: 20px;
+        height: calc(100vh - 98px);
+        overflow: auto;
     }
 
     .wrapper {

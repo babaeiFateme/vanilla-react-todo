@@ -36,6 +36,7 @@ export const TodoProvider = ({ children }) => {
      * @Desc: this function edit todo and add in local stroage
      */
     const handleEdit = (updateTodo) => {
+        console.log(updateTodo);
         const updatedTodos = todos.map((singleTodo) => {
             if (singleTodo.id === updateTodo.id) {
                 // Return a new object with the updated properties
