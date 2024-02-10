@@ -50,7 +50,7 @@ export const TodoProvider = ({ children }) => {
 
             return singleTodo;
         });
-
+        updateTodosBasedOnEndTime(todos, setTodos, STORAGE_KEY);
         setTodos(updatedTodos);
     };
 
@@ -105,6 +105,15 @@ export const TodoProvider = ({ children }) => {
                 return {
                     ...todo,
                     status: "complete",
+                };
+            } else if (
+                new Date(todo.endTime).getTime() - Date.now() >
+                    24 * 60 * 60 * 1000 &&
+                todo.isComplete === false
+            ) {
+                return {
+                    ...todo,
+                    status: "active",
                 };
             }
             return todo;
