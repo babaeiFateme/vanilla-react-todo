@@ -88,12 +88,22 @@ export const TodoProvider = ({ children }) => {
     const handleComplete = (todo) => {
         const updatedTodos = todos.map((singleTodo) => {
             if (singleTodo.id === todo.id) {
-                // Return a new object with the toggled isComplete property
-                return {
-                    ...singleTodo,
-                    isComplete: !singleTodo.isComplete,
-                    status: !singleTodo.isComplete ? "complete" : "active",
-                };
+                // Check if the current todo's status is "pending"
+                if (singleTodo.status === "pending") {
+                    console.log("sdfsdfsdfsdfsd");
+                    return {
+                        ...singleTodo,
+                        isComplete: !singleTodo.isComplete, // If status is "pending", set isComplete to true
+                        status: "complete", // Update status to "complete"
+                    };
+                } else {
+                    // If status is not "pending", toggle isComplete as before
+                    return {
+                        ...singleTodo,
+                        isComplete: !singleTodo.isComplete,
+                        status: !singleTodo.isComplete ? "complete" : "active",
+                    };
+                }
             }
             return singleTodo;
         });
@@ -105,11 +115,21 @@ export const TodoProvider = ({ children }) => {
         const updatedTodos = todos.map((todo) => {
             if (
                 new Date(todo.endTime).getTime() - Date.now() <
-                24 * 60 * 60 * 1000
+                    24 * 60 * 60 * 1000 &&
+                todo.isComplete === false
             ) {
                 return {
                     ...todo,
                     status: "pending",
+                };
+            } else if (
+                new Date(todo.endTime).getTime() - Date.now() <
+                    24 * 60 * 60 * 1000 &&
+                todo.isComplete === true
+            ) {
+                return {
+                    ...todo,
+                    status: "complete",
                 };
             }
             return todo;
